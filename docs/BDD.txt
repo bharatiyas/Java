@@ -1,0 +1,23 @@
+Most of the Agile projects use User Stories. Example of User Story:
+	
+	"As a store owner, I want to add items back to stock when they are returned"
+
+In BDD (Behaviour Driven Development) we split a Story into multiple Scenarios. Each Scenario is defined by a combination of:
+Given <Stituation 1>
+  And <Situation 2>
+  And .....
+When <Condition>
+Then <Action>
+
+So we start writing our test cases for each of the scenarios.
+
+This perfectly matches with how we work with Mockito. We can do:
+
+// Given - you setup the scenario
+List list = mock(List.class);
+
+// When - actual method call
+when(list.get(1)).thenReturn("Something");
+
+// Then
+assertEquals("Something", list.get(1));

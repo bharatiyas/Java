@@ -1,0 +1,26 @@
+They ‘collect’ the processed elements of the stream into a final representation
+
+1. Invoking the collect() method on a Stream
+2. with a Collector instance passed as a parameter 
+3. ends that Stream’s processing
+4. returns back the final result.
+
+1. A Collector is a terminal operation
+2. reduces the stream being processed to a Collection
+3.  it adds all the processed stream elements to the collection instance
+4. by mapping the stream elements to an equivalent form 
+5. using specified logic while they are being collected
+
+Streams are Monads, thus playing a big part in bringing functional programming to Java:
+
+In functional programming, a monad is a structure that represents computations defined as sequences of steps. A type with a monad structure defines what it means to chain operations, or nest functions of that type together.
+
+A stream represents a sequence of elements and supports different kind of operations to perform computations upon those elements.
+
+Stream operations are either intermediate or terminal. 
+Intermediate operations return a stream so we can chain multiple intermediate operations without using semicolons. Example - filter, map and sorted.
+Terminal operations are either void or return a non-stream result. Example - forEach
+
+Most stream operations accept some kind of lambda expression parameter, a functional interface specifying the exact behavior of the operation. Operations must be both 
+1) Non-interfering - does not modify the underlying data source of the stream, meaning should not add or remove elements from the collection.
+2) Stateless - lambda expression does NOT depend on any mutable variables or states from the outer scope which might change during execution.
